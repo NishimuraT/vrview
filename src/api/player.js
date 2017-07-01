@@ -30,12 +30,11 @@ var FAKE_FULLSCREEN_CLASS = 'vrview-fake-fullscreen';
  *    modechange: When the viewing mode changes (normal, fullscreen, VR).
  *    click (id): When a hotspot is clicked.
  */
-function Player(selector, contentInfo) {
+function Player(parentEl, contentInfo) {
   // Create a VR View iframe depending on the parameters.
   var iframe = this.createIframe_(contentInfo);
   this.iframe = iframe;
 
-  var parentEl = document.querySelector(selector);
   parentEl.appendChild(iframe);
 
   // Make a sender as well, for relying commands to the child IFrame.
